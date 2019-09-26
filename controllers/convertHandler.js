@@ -13,6 +13,7 @@ function ConvertHandler() {
   this.newString = function(input) {
     var newStr =  input.replace(/ /g, '');
     
+    // Opening with [0-9]+? (([/]|\.)[0-9]+)?
     
     
   }
