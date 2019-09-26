@@ -36,6 +36,17 @@ function ConvertHandler() {
     
   }
   
+  
+  this.filterString = function(input) {
+    if (input.match(/[0-9]+/).length === 1 or input.match(/[0-9]+([/]|\.))
+    
+    
+    
+  }
+  
+  
+  
+  
   this.getNum = function(input) {
     var result;
     
