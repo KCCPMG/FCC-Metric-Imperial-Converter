@@ -56,15 +56,22 @@ function ConvertHandler() {
     // var secondString = input.slice(breakpoint)[1];
     
     var validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+    validUnits.sort((a, b) => b.length - a.length);
     
     // validUnits.indexOf(secondString)
     for (let vu of validUnits) {
       
-      /*
-      How do I find out that one and ONLY one of these units is included?
-      */
-      
+      if (input.search(vu) >= 0) {
+        if (unit === undefined) {
+          unit = vu;
+          input.replace(vu, '');
+        } else {
+          unit = "invalid unit";
+        }
+      }
     }
+    
+    return {number, unit};
  
   }
   
