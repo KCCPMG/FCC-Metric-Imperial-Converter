@@ -14,15 +14,22 @@ function ConvertHandler() {
     var newStr =  input.replace(/ /g, '');
     var number;
     var unit;
+    var unitStart;
     
     // Opening with [0-9]+? (([/]|\.)[0-9]+)?
     var startsWithNum = newStr.match(/[0-9]+/)
     if (startsWithNum.index === 0) {
       var length = startsWithNum[0].length;
       // is next character a / or .?
+      if (startsWithNum[length].match(/([/]|\.)/)) {
+        
+      } else {
+        unitStart = length;
+      }
+
       
     } else {
-      
+      number = "invalid number"
     }
     
     return {number, unit};
