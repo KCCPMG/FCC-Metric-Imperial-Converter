@@ -8,8 +8,13 @@
 
 function ConvertHandler() {
   
+  
+  // Let's do all of our string parsing here     
   this.newString = function(input) {
-    return input.replace(/ /g, '');
+    var newStr =  input.replace(/ /g, '');
+    
+    
+    
   }
   
   this.getNum = function(input) {
