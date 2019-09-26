@@ -38,8 +38,18 @@ function ConvertHandler() {
   
   
   this.filterString = function(input) {
-    var completeNumber = input.match(/[0-9]+/);
-    var compoundNumber = input.match(/[0-9]+([/]|\.)[0-9]+/);
+    var completeNumber = input.match(/^[0-9]+/);
+    var compoundNumber = input.match(/^[0-9]+([/]|\.)[0-9]+/);
+    var number;
+    var unit;
+    var breakpoint;
+    
+    if (compoundNumber) {
+      number = Number(eval(compoundNumber[0]));
+      breakpoint = compoundNumber[0].length;
+    } else if(completeNumber) {
+      number = Number(completeNumber[0])
+    }
     
     
     if (completeNumber.length === 1 || compoundNumber.length === 1) {
