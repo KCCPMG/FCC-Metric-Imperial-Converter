@@ -14,7 +14,12 @@ function ConvertHandler() {
     var newStr =  input.replace(/ /g, '');
     
     // Opening with [0-9]+? (([/]|\.)[0-9]+)?
-    
+    var startsWithNum = newStr.match(/[0-9]+/)
+    if (startsWithNum.index === 0) {
+      
+    } else {
+      
+    }
     
   }
   
