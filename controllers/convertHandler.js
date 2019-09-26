@@ -12,14 +12,20 @@ function ConvertHandler() {
   // Let's do all of our string parsing here     
   this.newString = function(input) {
     var newStr =  input.replace(/ /g, '');
+    var number;
+    var unit;
     
     // Opening with [0-9]+? (([/]|\.)[0-9]+)?
     var startsWithNum = newStr.match(/[0-9]+/)
     if (startsWithNum.index === 0) {
+      var length = startsWithNum[0].length;
+      // is next character a / or .?
       
     } else {
       
     }
+    
+    return {number, unit};
     
   }
   
@@ -27,13 +33,13 @@ function ConvertHandler() {
     var result;
     
     
-    return result;
+    return this.newString(input).number;
   };
   
   this.getUnit = function(input) {
     var result;
     
-    return result;
+    return this.newString(input).number;
   };
   
   this.getReturnUnit = function(initUnit) {
