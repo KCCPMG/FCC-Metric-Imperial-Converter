@@ -60,6 +60,9 @@ function ConvertHandler() {
     // validUnits.indexOf(secondString)
     for (let vu of validUnits) {
       
+      /*
+      How do I find out that one and ONLY one of these units is included?
+      */
       
     }
  
