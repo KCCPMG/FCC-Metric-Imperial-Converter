@@ -48,18 +48,21 @@ function ConvertHandler() {
       number = Number(eval(compoundNumber[0]));
       breakpoint = compoundNumber[0].length;
     } else if(completeNumber) {
-      number = Number(completeNumber[0])
-    }
-    
-    
-    if (completeNumber.length === 1 || compoundNumber.length === 1) {
-      //good number
+      number = Number(completeNumber[0]);
+      breakpoint = number.length;
     } else {
-      //invalid number
+      number = "invalid number"
     }
+    // var secondString = input.slice(breakpoint)[1];
     
+    var validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     
-    
+    // validUnits.indexOf(secondString)
+    for (let vu of validUnits) {
+      
+      
+    }
+ 
   }
   
   
