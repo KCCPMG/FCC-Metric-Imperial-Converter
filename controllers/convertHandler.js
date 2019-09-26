@@ -38,7 +38,15 @@ function ConvertHandler() {
   
   
   this.filterString = function(input) {
-    if (input.match(/[0-9]+/).length === 1 or input.match(/[0-9]+([/]|\.))
+    var completeNumber = input.match(/[0-9]+/);
+    var compoundNumber = input.match(/[0-9]+([/]|\.)[0-9]+/);
+    
+    
+    if (completeNumber.length === 1 || compoundNumber.length === 1) {
+      //good number
+    } else {
+      //invalid number
+    }
     
     
     
