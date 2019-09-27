@@ -87,7 +87,13 @@ function ConvertHandler() {
     var lastDigit = foundDigits[foundDigits.length-1][0];
     var splitIndex = input.lastIndexOf(lastDigit) + 1;
     
-    var numString = input.slice
+    var numString = input.slice(0, splitIndex);
+    var unitString = input.slice(splitIndex);
+    
+    console.log(numString, unitString);
+    
+    
+    
     
     
   }
