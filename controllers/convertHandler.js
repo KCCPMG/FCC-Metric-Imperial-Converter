@@ -98,7 +98,13 @@ function ConvertHandler() {
     console.log(numString, unitString);
     
     // numString must match regex
-    
+    if (/[0-9]+/.test(numString)) {
+      number = Number(numString)
+    } else if (/[0-9]+([/]|\.)[0-9]+/.test(numString)) {
+      number = Number(eval(numString));
+    } else {
+      number = "invalid number";
+    }
     
     // unitString must match an option
     for (let vu of this.validUnits) {
