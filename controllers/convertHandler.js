@@ -10,73 +10,82 @@ function ConvertHandler() {
   
   
   // Let's do all of our string parsing here     
-  this.newString = function(input) {
-    var newStr =  input.replace(/ /g, '');
-    var number;
-    var unit;
-    var unitStart;
+//   this.newString = function(input) {
+//     var newStr =  input.replace(/ /g, '');
+//     var number;
+//     var unit;
+//     var unitStart;
     
-    // Opening with [0-9]+? (([/]|\.)[0-9]+)?
-    var startsWithNum = newStr.match(/[0-9]+/)
-    if (startsWithNum.index === 0) {
-      var length = startsWithNum[0].length;
-      // is next character a / or .?
-      if (startsWithNum[length].match(/([/]|\.)/)) {
+//     // Opening with [0-9]+? (([/]|\.)[0-9]+)?
+//     var startsWithNum = newStr.match(/[0-9]+/)
+//     if (startsWithNum.index === 0) {
+//       var length = startsWithNum[0].length;
+//       // is next character a / or .?
+//       if (startsWithNum[length].match(/([/]|\.)/)) {
         
-      } else {
-        unitStart = length;
-      }
+//       } else {
+//         unitStart = length;
+//       }
 
       
-    } else {
-      number = "invalid number"
-    }
+//     } else {
+//       number = "invalid number"
+//     }
     
-    return {number, unit};
+//     return {number, unit};
     
-  }
+//   }
   
   
-  this.filterString = function(input) {
-    var completeNumber = input.match(/^[0-9]+/);
-    var compoundNumber = input.match(/^[0-9]+([/]|\.)[0-9]+/);
-    var number;
-    var unit;
-    var breakpoint;
+//   this.filterString = function(input) {
+//     var completeNumber = input.match(/^[0-9]+/);
+//     var compoundNumber = input.match(/^[0-9]+([/]|\.)[0-9]+/);
+//     var number;
+//     var unit;
+//     var breakpoint;
     
-    if (compoundNumber) {
-      number = Number(eval(compoundNumber[0]));
-      breakpoint = compoundNumber[0].length;
-    } else if(completeNumber) {
-      number = Number(completeNumber[0]);
-      breakpoint = number.length;
-    } else {
-      number = "invalid number"
-    }
-    // var secondString = input.slice(breakpoint)[1];
+//     if (compoundNumber) {
+//       number = Number(eval(compoundNumber[0]));
+//       breakpoint = compoundNumber[0].length;
+//     } else if(completeNumber) {
+//       number = Number(completeNumber[0]);
+//       breakpoint = number.length;
+//     } else {
+//       number = "invalid number"
+//     }
+//     // var secondString = input.slice(breakpoint)[1];
     
-    var validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
-    validUnits.sort((a, b) => b.length - a.length);
+//     var validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+//     validUnits.sort((a, b) => b.length - a.length);
     
-    // validUnits.indexOf(secondString)
-    for (let vu of validUnits) {
+//     // validUnits.indexOf(secondString)
+//     for (let vu of validUnits) {
       
-      if (input.search(vu) >= 0) {
-        if (unit === undefined) {
-          unit = vu;
-          input.replace(vu, '');
-        } else {
-          unit = "invalid unit";
-        }
-      }
-    }
+//       if (input.search(vu) >= 0) {
+//         if (unit === undefined) {
+//           unit = vu;
+//           input.replace(vu, '');
+//         } else {
+//           unit = "invalid unit";
+//         }
+//       }
+//     }
+  
+//     if (unit===undefined) {
+//       unit = "invalid unit";
+//     }
     
-    if (unit===undefined) {
-      unit = "invalid unit";
-    }
-    
-    return {number, unit};
+//     return {number, unit};
  
+//   }
+  
+  
+  
+  this.newString = function(input) {
+    var lastNum;
+    var foundDigits = input.match(/[0-9]/g);
+    var lastDigit = foundDigits[foundDigits.length-1][0];
+    
   }
   
   
