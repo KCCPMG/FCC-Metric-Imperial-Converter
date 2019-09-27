@@ -91,7 +91,7 @@ function ConvertHandler() {
     var numString = input.slice(0, splitIndex);
     var unitString = input.slice(splitIndex);
     var number;
-    var units;
+    var units = "invalid unit";
     
     
     // Delete this
@@ -107,6 +107,8 @@ function ConvertHandler() {
         break;
       }
     }
+    
+    return {number, units}
     
   }
   
