@@ -8,6 +8,7 @@
 
 function ConvertHandler() {
   
+  this.validUnits = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'].sort((a,b) => b.length-a.length);
   
   // Let's do all of our string parsing here     
 //   this.newString = function(input) {
@@ -89,12 +90,23 @@ function ConvertHandler() {
     
     var numString = input.slice(0, splitIndex);
     var unitString = input.slice(splitIndex);
+    var number;
+    var units;
     
+    
+    // Delete this
     console.log(numString, unitString);
     
+    // numString must match regex
     
     
-    
+    // unitString must match an option
+    for (let vu of this.validUnits) {
+      if (unitString === vu) {
+        units = vu;
+        break;
+      }
+    }
     
   }
   
