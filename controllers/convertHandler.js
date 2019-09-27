@@ -71,6 +71,10 @@ function ConvertHandler() {
       }
     }
     
+    if (unit===undefined) {
+      unit = "invalid unit";
+    }
+    
     return {number, unit};
  
   }
