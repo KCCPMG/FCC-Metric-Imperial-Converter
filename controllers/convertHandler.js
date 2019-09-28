@@ -46,20 +46,23 @@ function ConvertHandler() {
   
   
   
-  
+  // Done
   this.getNum = function(input) {
     return this.newString(input).number;
   };
   
+  // Done
   this.getUnit = function(input) {
     return this.newString(input).number;
   };
+  
   
   this.getReturnUnit = function(initUnit) {
     var result;
     
     return result;
   };
+  
 
   this.spellOutUnit = function(unit) {
     var result;
