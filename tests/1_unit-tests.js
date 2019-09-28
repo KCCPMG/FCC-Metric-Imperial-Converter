@@ -30,24 +30,24 @@ suite('Unit Tests', function(){
     
     test('Fractional Input', function(done) {
       var input = '27/ 4 km';
-      assert.equal(convertHandler.getNum(input), 27/4);
-      
+      assert.equal(convertHandler.getNum(input), 6.75);
       done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
+      var input = '6/0.5 l'
+      assert.equal(convertHandler.getNum(input), 12);
+      done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
       
-      //done();
+      done();
     });
     
     test('No Numerical Input', function(done) {
       
-      //done();
+      done();
     }); 
     
   });
