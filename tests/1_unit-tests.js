@@ -23,13 +23,16 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      
-      //done();
+      var input = '91.4gal'
+      assert.equal(convertHandler.getNum(input), 91.4);
+      done();
     });
     
     test('Fractional Input', function(done) {
+      var input = '27/ 4 km';
+      assert.equal(convertHandler.getNum(input), 27/4);
       
-      //done();
+      done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
