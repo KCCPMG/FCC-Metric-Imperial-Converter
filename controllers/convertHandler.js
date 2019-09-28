@@ -83,7 +83,7 @@ function ConvertHandler() {
   
   
   this.newString = function(input) {
-    var lastNum;
+    input = input.replace(/\s/g, '');
     var foundDigits = input.match(/[0-9]/g);
     var lastDigit = foundDigits[foundDigits.length-1][0];
     var splitIndex = input.lastIndexOf(lastDigit) + 1;
