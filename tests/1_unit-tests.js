@@ -41,8 +41,8 @@ suite('Unit Tests', function(){
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      var input = '';
-      assert.equal(convertHandler.getNum(input), )
+      var input = '20/5/4 gal';
+      assert.equal(convertHandler.getNum(input), 'invalid number')
       done();
     });
     

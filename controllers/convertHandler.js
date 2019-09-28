@@ -28,6 +28,7 @@ function ConvertHandler() {
     if (/^[0-9]+$/.test(numString)) {
       number = Number(numString)
     } else if (/[0-9]+([/]|\.)[0-9]+/.test(numString)) {
+      if (numString) {}
       number = Number(eval(numString));
     } else {
       number = "invalid number";
