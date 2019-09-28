@@ -13,8 +13,8 @@ function ConvertHandler() {
   
   this.newString = function(input) {
     input = input.replace(/\s/g, '');
-    var foundDigits = input.match(/[0-9]/g);
-    var lastDigit = foundDigits[foundDigits.length-1][0];
+    var foundDigits = input.match(/[0-9]/g); 
+    var lastDigit = foundDigits[foundDigits.length-1][0]; // This breaks with no numbers
     var splitIndex = input.lastIndexOf(lastDigit) + 1;
     
     var numString = input.slice(0, splitIndex);
@@ -103,8 +103,9 @@ function ConvertHandler() {
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result;
-    if (initNum==='invalid number' && initUnit=='invalid unit') return "Invalid number and unit";
-    if (initNum=='invali')
+    if (initNum==='invalid number' && initUnit==='invalid unit') return "invalid number and unit";
+    if (initNum==='invalid number') return "invalid number";
+    if (initUnit==='invalid unit') return 'invalid unit';
     
     result += String(initNum) + ' ';
     result += this.spellOutUnit(initUnit) + ' ';
