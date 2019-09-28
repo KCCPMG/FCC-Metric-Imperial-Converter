@@ -24,7 +24,7 @@ function ConvertHandler() {
     
     
     // numString must match regex
-    if (/[0-9]+/.test(numString)) {
+    if (/^[0-9]+$/.test(numString)) {
       number = Number(numString)
     } else if (/[0-9]+([/]|\.)[0-9]+/.test(numString)) {
       number = Number(eval(numString));
@@ -103,6 +103,9 @@ function ConvertHandler() {
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result;
+    if (initNum==='invalid number' && initUnit=='invalid unit') return "Invalid number and unit";
+    if (initNum=='invali')
+    
     result += String(initNum) + ' ';
     result += this.spellOutUnit(initUnit) + ' ';
     result += 'converts to ' + ' ';
