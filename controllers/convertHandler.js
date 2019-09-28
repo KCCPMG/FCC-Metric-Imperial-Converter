@@ -14,6 +14,7 @@ function ConvertHandler() {
   this.newString = function(input) {
     input = input.replace(/\s/g, '');
     var foundDigits = input.match(/[0-9]/g); 
+    if (foundDigits === null) return {number: 'invalid number', unit:this.newString("0" + input).unit};
     var lastDigit = foundDigits[foundDigits.length-1][0]; // This breaks with no numbers
     var splitIndex = input.lastIndexOf(lastDigit) + 1;
     
