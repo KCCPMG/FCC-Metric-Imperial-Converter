@@ -103,11 +103,11 @@ function ConvertHandler() {
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result;
-    result += initNum + ' ';
+    result += String(initNum) + ' ';
     result += this.spellOutUnit(initUnit) + ' ';
-    result += 'converts to '+ ' ';
-    result += initNum + ' ';
-    result += initNum + ' ';
+    result += 'converts to ' + ' ';
+    result += String(returnNum) + ' ';
+    result += this.spellOutUnit(returnUnit) + '.';
     
     return result;
   };
