@@ -61,6 +61,7 @@ function ConvertHandler() {
   
   // Done
   this.getReturnUnit = function(initUnit) {
+    if (initUnit === "invalid unit") return initUnit;
     var result;
     
     if (initUnit === 'l') result = 'gal';
