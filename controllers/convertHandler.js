@@ -56,19 +56,26 @@ function ConvertHandler() {
   
   // Done
   this.getUnit = function(input) {
-    return this.newString(input).number;
+    return this.newString(input).units;
   };
   
   // Done
   this.getReturnUnit = function(initUnit) {
     var result;
-    initUnit = initUnit.toLowerCase();
+    
     if (initUnit === 'l') result = 'gal';
     if (initUnit === 'gal') result = 'l';
     if (initUnit === 'kg') result = 'lbs';
     if (initUnit === 'lbs') result = 'kg';
     if (initUnit === 'km') result = 'mi';
     if (initUnit === 'mi') result = 'kg';
+    
+    if (initUnit === 'L') result = 'GAL';
+    if (initUnit === 'GAL') result = 'L';
+    if (initUnit === 'KG') result = 'LBS';
+    if (initUnit === 'LBS') result = 'KG';
+    if (initUnit === 'KM') result = 'MI';
+    if (initUnit === 'MI') result = 'KG';
     
     return result;
   };
