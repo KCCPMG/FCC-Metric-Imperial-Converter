@@ -73,7 +73,7 @@ suite('Unit Tests', function(){
   });
   
   suite('Function convertHandler.getReturnUnit(initUnit)', function() {
-    
+    // WHAT THE FUCK - THIS IS *THEIR* TEST METHOD AND MY CONVERTHANDLER METHOD SHOULD BE WORKING
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg'];
       var expect = ['l','gal','km','mi','kg','lbs'];

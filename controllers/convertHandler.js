@@ -80,7 +80,7 @@ function ConvertHandler() {
     return result;
   };
   
-
+  // Done
   this.spellOutUnit = function(unit) {
     var result;
     unit = unit.toLowerCase();
@@ -94,7 +94,7 @@ function ConvertHandler() {
     return result;
   };
   
-  
+  // Done
   this.getReturnNum = function(initNum, initUnit) {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
@@ -111,7 +111,7 @@ function ConvertHandler() {
     return result;
   };
   
-  
+  // Done
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result;
     if (initNum==='invalid number' && initUnit==='invalid unit') return "invalid number and unit";
