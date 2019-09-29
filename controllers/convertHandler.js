@@ -108,21 +108,20 @@ function ConvertHandler() {
     if (initUnit === 'km') result = initNum / miToKm;
     if (initUnit === 'mi') result = initNum * miToKm;
     
-    result = (result * 10**5)/(10**5);
+    result = Math.round(result * 10**5)/(10**5);
     
     return result;
   };
   
   // Done
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
     if (initNum==='invalid number' && initUnit==='invalid unit') return "invalid number and unit";
     if (initNum==='invalid number') return "invalid number";
     if (initUnit==='invalid unit') return 'invalid unit';
     
-    result += String(initNum) + ' ';
+    var result = String(initNum) + ' ';
     result += this.spellOutUnit(initUnit) + ' ';
-    result += 'converts to ' + ' ';
+    result += 'converts to' + ' ';
     result += String(returnNum) + ' ';
     result += this.spellOutUnit(returnUnit) + '.';
     
