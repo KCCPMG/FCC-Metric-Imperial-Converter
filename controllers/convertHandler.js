@@ -97,6 +97,7 @@ function ConvertHandler() {
   
   // Done
   this.convert = function(initNum, initUnit) {
+    if (initNum==='invalid number') return initNum;
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
