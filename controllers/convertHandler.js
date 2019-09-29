@@ -68,14 +68,14 @@ function ConvertHandler() {
     if (initUnit === 'kg') result = 'lbs';
     if (initUnit === 'lbs') result = 'kg';
     if (initUnit === 'km') result = 'mi';
-    if (initUnit === 'mi') result = 'kg';
+    if (initUnit === 'mi') result = 'km';
     
     if (initUnit === 'L') result = 'GAL';
     if (initUnit === 'GAL') result = 'L';
     if (initUnit === 'KG') result = 'LBS';
     if (initUnit === 'LBS') result = 'KG';
     if (initUnit === 'KM') result = 'MI';
-    if (initUnit === 'MI') result = 'KG';
+    if (initUnit === 'MI') result = 'KM';
     
     return result;
   };

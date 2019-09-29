@@ -88,10 +88,13 @@ suite('Unit Tests', function(){
   suite('Function convertHandler.spellOutUnit(unit)', function() {
     
     test('For Each Valid Unit Inputs', function(done) {
-      var input = ['gal','l','mi','km','lbs','kg'];
-      var expect = 
+      var input = ['l','gal','kg','lbs','km','mi'];
+      var expect = ['liters', 'gallons', 'kilograms', 'pounds', 'kilometers', 'miles'];
+      input.forEach(function(el, i) {
+        assert.equal(convertHandler.spellOutUnit(el), expect[i]);
+      });
+      done();
       //see above example for hint
-      // done();
     });
     
   });
@@ -106,7 +109,7 @@ suite('Unit Tests', function(){
     });
     
     test('L to Gal', function(done) {
-      
+      var input = 18.92705, ''
       //done();
     });
     
