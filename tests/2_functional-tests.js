@@ -37,9 +37,13 @@ suite('Functional Tests', function() {
         chai.request(server)
           .get('api/convert')
           .query({input: '32g'})
-          
-        
-        //done();
+          .end(function(err, res) {
+            assert.equal(res.status, 200);
+            assert.euqal(res.body.initNum, 32);
+            assert.equal(res.body.initUnit, 'invalid unit');
+            assert.equal(res.body.returnUnit, null);
+        });
+
       });
       
       test('Convert 3/7.2/4kg (invalid number)', function(done) {
