@@ -59,9 +59,9 @@ suite('Unit Tests', function(){
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele) {
-        assert.include(convertHandler.validUnits, ele);
+        assert.equal(convertHandler.getUnit('75 ' + ele), ele);
       });
-      // done();
+      done();
     });
     
     test('Unknown Unit Input', function(done) {
