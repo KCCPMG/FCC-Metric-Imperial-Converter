@@ -59,15 +59,15 @@ suite('Unit Tests', function(){
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele) {
-        assert.equal(convertHandler.fuck(), );
+        assert.include(convertHandler.validUnits, ele);
       });
-      done();
+      // done();
     });
     
     test('Unknown Unit Input', function(done) {
-      var input = 'bung';
-      assert.getUnit
-      //done();
+      var input = '73.5 bung';
+      assert.equal(convertHandler.getUnit(input), 'invalid unit')
+      done();
     });  
     
   });
